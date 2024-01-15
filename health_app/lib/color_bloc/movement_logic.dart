@@ -66,10 +66,10 @@ int happyMovements(ColorState state) {
   // consistent interactions with few colors is indicative of happy.
   var sortedEntries = state.colorInteractionCount.entries.toList()
     ..sort((a, b) => b.value.compareTo(a.value));
-  if (sortedEntries[4].value < sortedEntries[3].value - 4 ||
-      sortedEntries[2].value < sortedEntries[3].value - 4) {
+  int middleSorted = sortedEntries.length ~/ 2;
+  if (sortedEntries[middleSorted].value < sortedEntries[middleSorted - 1].value - 4) {
     print(
-        'Happy: top 5 sorted entries are greater than 6th runner up by 4 or more interactions');
+        'Happy: top 50% sorted entries are greater than runner up by 4 or more interactions');
     happy += mediumDuration();
   }
 
