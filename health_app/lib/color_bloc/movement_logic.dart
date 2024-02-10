@@ -264,6 +264,9 @@ int tiredMovements(
     print('Tired: state.colorData.length < 34: ${state.colorData.length}');
     tired += smallDuration();
   }
+  if (state.start > 2) {
+    tired += mediumDuration();
+  }
   return tired;
 }
 
