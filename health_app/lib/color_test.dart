@@ -101,7 +101,7 @@ class _CETviewState extends State<CETview> {
                 tapped = true;
               }),
               child: Container(
-                color: Colors.black.withOpacity(0.7),
+                color: Colors.black.withOpacity(0.8),
                 child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -215,7 +215,8 @@ class ColorTrackingCanvasState extends State<ColorTrackingCanvas> {
 
   void _updateDuration(Color color, Duration duration) {
     if (color != Colors.transparent) {
-      colorDuration.update(color, (existingDuration) => existingDuration + duration,
+      colorDuration.update(
+          color, (existingDuration) => existingDuration + duration,
           ifAbsent: () => duration);
     }
   }
@@ -241,8 +242,8 @@ class ColorGridPainter extends CustomPainter {
     for (int row = 0; row < rows; row++) {
       for (int col = 0; col < columns; col++) {
         int colorIndex = (row * columns + col) % colorsMap.keys.length;
-        _paintSquare(canvas, Offset(col * squareWidth, row * squareHeight), squareWidth,
-            squareHeight, colorsMap.keys.toList()[colorIndex]);
+        _paintSquare(canvas, Offset(col * squareWidth, row * squareHeight),
+            squareWidth, squareHeight, colorsMap.keys.toList()[colorIndex]);
       }
     }
   }

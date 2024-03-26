@@ -14,7 +14,44 @@ class RbeatApp extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 8.0),
+              child: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.zero,
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Colors.red,
+                        Colors.orange,
+                        Colors.yellow,
+                        Colors.green,
+                        Colors.blue,
+                        Colors.indigo,
+                        Colors.purple,
+                      ],
+                    )),
+                child: const Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Color Emotions Test',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -23,17 +60,7 @@ class RbeatApp extends StatelessWidget {
                 child: const Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        'Color Emotions Test',
-                        style: TextStyle(
-                          fontSize: 24,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
                       child: Text(
                         'Thank you for participating! This is a unique test designed evaluate emotional status based on colors, sounds and movements.',
                         style: TextStyle(
@@ -43,7 +70,7 @@ class RbeatApp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
                       child: Text(
                         'This is a prototype designed to validate the concept and your feedback is essential. Thank you for participating!',
                         style: TextStyle(
@@ -56,8 +83,42 @@ class RbeatApp extends StatelessWidget {
                 ),
               ),
             ),
+            const Spacer(),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CETview(),
+                  ),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.green,
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 9.0,
+                      horizontal: 27.0,
+                    ),
+                    child: Text(
+                      'Start',
+                      style: TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const Spacer(),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -66,9 +127,9 @@ class RbeatApp extends StatelessWidget {
                 child: const Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
                       child: Text(
-                        'When you are ready press START.',
+                        'When you are ready press Start.',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -76,7 +137,7 @@ class RbeatApp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
                       child: Text(
                         'Once you start move your finger around the colors however you FEEL for 10 seconds. Then review the assessment and provide feedback.',
                         style: TextStyle(
@@ -86,31 +147,6 @@ class RbeatApp extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-              ),
-            ),
-            const Spacer(),
-            GestureDetector(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const CETview(),
-                ),
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.white,
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 9.0,
-                    horizontal: 16,
-                  ),
-                  child: Text(
-                    'START',
-                    style: TextStyle(fontSize: 20),
-                  ),
                 ),
               ),
             ),
