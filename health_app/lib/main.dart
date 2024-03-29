@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_app/color_test.dart';
+
 import 'package:health_app/instructions_view.dart';
 
 void main() => runApp(const MaterialApp(home: RbeatApp()));

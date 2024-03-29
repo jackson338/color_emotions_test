@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/color_test.dart';
 //import 'package:health_app/main.dart';
 
 class InstructionsView extends StatefulWidget {
@@ -12,7 +13,7 @@ class _InstructionsViewState extends State<InstructionsView> {
   final List<Color> backgroundGradientColors = [
     Color.fromARGB(221, 230, 230, 230),
     Colors.white,
-    Color.fromARGB(221, 230, 230, 230)
+    Color.fromARGB(221, 230, 230, 230),
   ];
   final List<String> instructionTitles = [
     'What is the Color Test?',
@@ -32,7 +33,11 @@ class _InstructionsViewState extends State<InstructionsView> {
       if (currentState != instructionTitles.length - 1) {
         currentState += 1;
       } else {
-        //Start the color test.
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CETview(),
+            ));
       }
       if (currentState == instructionTitles.length - 1) {
         currentButtonText = 'Start';
