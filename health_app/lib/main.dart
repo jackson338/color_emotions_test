@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/color_test.dart';
+import 'package:health_app/instructions_view.dart';
 
 void main() => runApp(const MaterialApp(home: RbeatApp()));
 
@@ -13,42 +14,7 @@ class RbeatApp extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 8.0),
-              child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.zero,
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Colors.red,
-                        Colors.orange,
-                        Colors.yellow,
-                        Colors.green,
-                        Colors.blue,
-                        Colors.indigo,
-                        Colors.purple,
-                      ],
-                    )),
-                child: const Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        'Color Emotions Test',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            TitleBar(),
             Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
@@ -91,7 +57,7 @@ class RbeatApp extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CETview(),
+                    builder: (context) => InstructionsView(),
                   ),
                 ),
                 child: Container(
@@ -139,7 +105,7 @@ class RbeatApp extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 16.0),
                       child: Text(
-                        'Once you start move your finger around the colors however you FEEL for 10 seconds. Then review the assessment and provide feedback.',
+                        'Once you start, move your finger around the colors however you FEEL for 10 seconds. Then review the assessment and provide feedback.',
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -148,6 +114,53 @@ class RbeatApp extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TitleBar extends StatelessWidget {
+  const TitleBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 8.0),
+      child: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.zero,
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                //Colors.red,
+                //Colors.orange,
+                //Colors.yellow,
+                //Colors.green,
+                Colors.blue,
+                Colors.indigo,
+                Colors.purple,
+              ],
+            )),
+        child: const Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Color Emotions Test',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],
