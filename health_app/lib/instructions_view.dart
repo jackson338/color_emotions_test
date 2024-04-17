@@ -3,7 +3,7 @@ import 'package:health_app/color_test.dart';
 //import 'package:health_app/main.dart';
 
 class InstructionsView extends StatefulWidget {
-  InstructionsView({super.key});
+  const InstructionsView({super.key});
 
   @override
   State<InstructionsView> createState() => _InstructionsViewState();
@@ -11,9 +11,9 @@ class InstructionsView extends StatefulWidget {
 
 class _InstructionsViewState extends State<InstructionsView> {
   final List<Color> backgroundGradientColors = [
-    Color.fromARGB(221, 230, 230, 230),
+    const Color.fromARGB(221, 230, 230, 230),
     Colors.white,
-    Color.fromARGB(221, 230, 230, 230),
+    const Color.fromARGB(221, 230, 230, 230),
   ];
   final List<String> instructionTitles = [
     'What is the Color Test?',
@@ -48,37 +48,35 @@ class _InstructionsViewState extends State<InstructionsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Expanded(
-      child: Container(
-        height: MediaQuery.of(context).size.height -
-            MediaQuery.of(context).padding.top,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: backgroundGradientColors,
-          ),
+        body: Container(
+      height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: backgroundGradientColors,
         ),
+      ),
+      child: SafeArea(
         child: Center(
           child: Column(
             children: [
               //for (final title in instructionTitles)
               //{
               Padding(
-                padding: EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(32.0),
                 child: Text(instructionTitles[currentState],
-                    style: TextStyle(fontSize: 24.0)),
+                    style: const TextStyle(fontSize: 24.0)),
               ),
               const Spacer(),
               Padding(
-                padding: EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(32.0),
                 child: Text(instructionBodies[currentState],
-                    style: TextStyle(fontSize: 18.0)),
+                    style: const TextStyle(fontSize: 18.0)),
               ),
               const Spacer(),
               Padding(
-                padding: EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(32.0),
                 child: ElevatedButton(
                     onPressed: onNextPressed, child: Text(currentButtonText)),
               ),
@@ -87,6 +85,6 @@ class _InstructionsViewState extends State<InstructionsView> {
           ),
         ),
       ),
-    )));
+    ));
   }
 }

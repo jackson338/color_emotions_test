@@ -85,6 +85,7 @@ class ResultsView extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context)
                           ..pop()
+                          ..pop()
                           ..pop();
                       },
                       child: Container(
@@ -219,7 +220,8 @@ class _ProgressBarPainter extends CustomPainter {
       paint.color = Colors.red;
       progressWidth = (0.5 - normalizedValue) * size.width;
       canvas.drawRect(
-          Offset(size.width / 2 - progressWidth, 0) & Size(progressWidth, size.height),
+          Offset(size.width / 2 - progressWidth, 0) &
+              Size(progressWidth, size.height),
           paint);
     } else {
       // Positive value
@@ -247,7 +249,8 @@ void showDetailsSheet({
     context: context,
     builder: (BuildContext context) {
       return Container(
-        height: MediaQuery.of(context).size.height * 0.75, // 75% of screen height
+        height:
+            MediaQuery.of(context).size.height * 0.75, // 75% of screen height
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
