@@ -29,6 +29,7 @@ class InsufficientDataView extends StatelessWidget {
               child: InkWell(
                 onTap: () => Navigator.of(context)
                   ..pop()
+                  ..pop()
                   ..pop(),
                 child: Container(
                   decoration: BoxDecoration(
